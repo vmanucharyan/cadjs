@@ -12,7 +12,6 @@ def parse(source_file):
 
         while True:
             ln = f.readline()
-            print(ln)
 
             if not ln:
                 break
@@ -44,7 +43,7 @@ def parse(source_file):
 
 if __name__ == "__main__":
     q = parse("questions.src")
-    print(q)
+    print("questions count {}".format(len(q)))
 
     obj = {'questions': q}
 
