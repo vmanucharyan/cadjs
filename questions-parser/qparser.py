@@ -28,12 +28,14 @@ def parse(source_file):
 
                 if (answer.endswith("}")):
                     answer = answer[0:len(answer)-1]
-                    active_prefix = ""
 
                 questions.append({
                     'question': active_prefix + ' ' + question,
                     'answer': answer
                 })
+
+                if (answer.endswith("}")):
+                    active_prefix = ""
 
             else:
                 pass
