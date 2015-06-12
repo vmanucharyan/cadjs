@@ -3,7 +3,7 @@
 # Add to bookmarklet URL
 ```js
 javascript:(function(){
-    var script = document.createElement('cadscript');
+    var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://rawgit.com/IvanDyachenko/cadjs/feature/testBookmarklet/testBookmarklet.js';
     document.body.appendChild(script);})()
