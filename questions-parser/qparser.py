@@ -20,6 +20,7 @@ def parse(source_file):
 
             if ln.endswith("{"):
                 active_prefix = ln[0:len(ln) - 1]
+
             elif (ln.startswith("№")):
                 question = f.readline().strip()
                 answer = f.readline() \
@@ -29,9 +30,12 @@ def parse(source_file):
                 if (answer.endswith("}")):
                     answer = answer[0:len(answer)-1]
 
+                if active_prefix != "":
+                    question = active_prefix + ' ' + question
+
                 questions.append({
-                    'question': active_prefix.strip() + ' ' + question.strip(),
-                    'answer': answer
+                    'question': question,
+                    'answer': answer.strip()
                 })
 
                 if (answer.endswith("}")):
