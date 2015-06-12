@@ -51,3 +51,6 @@ if __name__ == "__main__":
 
     with open("out.json", "w") as of:
         json.dump(obj, of, ensure_ascii=False, indent=4)
+
+    with open("out.min.json", "w") as of:
+        json.dump(obj, of, ensure_ascii=False)
