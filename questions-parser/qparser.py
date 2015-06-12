@@ -19,13 +19,15 @@ def parse(source_file):
 
             ln = ln.strip()
 
-            if ln.endswith(u"{"):
+            if ln.endswith("{"):
                 active_prefix = ln[0:len(ln) - 1]
-            elif (ln.startswith(u"№")):
+            elif (ln.startswith("№")):
                 question = f.readline().strip()
-                answer = f.readline().strip()
+                answer = f.readline() \
+                    .replace("Ответ:", "") \
+                    .strip()
 
-                if (answer.endswith(u"}")):
+                if (answer.endswith("}")):
                     answer = answer[0:len(answer)-1]
                     active_prefix = ""
 
