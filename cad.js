@@ -1,6 +1,6 @@
 (function() {
     function getText(element) {
-        var text = element.nnerText || element.textContent;
+        var text = element.innerText || element.textContent;
         return text;
     }
 
