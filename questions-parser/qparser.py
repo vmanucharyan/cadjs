@@ -30,7 +30,7 @@ def parse(source_file):
                     answer = answer[0:len(answer)-1]
 
                 questions.append({
-                    'question': active_prefix.strip() + ' ' + question,
+                    'question': active_prefix.strip() + ' ' + question.strip(),
                     'answer': answer
                 })
 
