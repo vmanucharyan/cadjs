@@ -9,6 +9,7 @@ def parse(source_file):
         questions = []
 
         active_prefix = ""
+        cat_index = -1
 
         while True:
             ln = f.readline()
@@ -20,7 +21,13 @@ def parse(source_file):
 
             if ln.endswith("{"):
                 active_prefix = ln[0:len(ln) - 1]
-            elif (ln.startswith("№")):
+
+            elif ln.startswith("##"):
+                cat_name = f.readline().strip()
+                questions.append({'name': cat_name, 'questions': []})
+                cat_index += 1
+
+            elif ln.startswith("№"):
                 question = f.readline().strip()
                 answer = f.readline() \
                     .replace("Ответ:", "") \
@@ -29,9 +36,12 @@ def parse(source_file):
                 if (answer.endswith("}")):
                     answer = answer[0:len(answer)-1]
 
-                questions.append({
-                    'question': active_prefix + ' ' + question,
-                    'answer': answer
+                if active_prefix != "":
+                    question = active_prefix + ' ' + question
+
+                questions[cat_index]['questions'].append({
+                    'question': question,
+                    'answer': answer.strip()
                 })
 
                 if (answer.endswith("}")):
@@ -45,9 +55,11 @@ def parse(source_file):
 
 if __name__ == "__main__":
     q = parse("questions.src")
-    print("questions count {}".format(len(q)))
 
-    obj = {'questions': q}
+    obj = {'categories': q}
 
     with open("out.json", "w") as of:
         json.dump(obj, of, ensure_ascii=False, indent=4)
+
+    with open("out.min.json", "w") as of:
+        json.dump(obj, of, ensure_ascii=False)
