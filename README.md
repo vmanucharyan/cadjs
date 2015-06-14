@@ -21,4 +21,5 @@ javascript:(function(){
 ```
 
 ## Using
+![Alt Text](https://github.com/IvanDyachenko/cadjs/blob/master/cadjs.gif)
 
