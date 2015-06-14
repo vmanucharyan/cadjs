@@ -21,5 +21,5 @@ javascript:(function(){
 ```
 
 ## Using
-![Alt Text](https://github.com/IvanDyachenko/cadjs/blob/master/cadjs.gif)
+`Cadjs` довольно самостоятельный скрипт, он сам выбирает/заполняет ответ, который, в отличие от тебя, он знает, в соответсвии с вопросом. Поэтому просто нажимай на созданную шагом ранее `bookmarklet` и :tada:.
 
