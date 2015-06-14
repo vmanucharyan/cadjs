@@ -21,5 +21,5 @@ javascript:(function(){
 ```
 
 ## Using
-[[ https://github.com/IvanDyachenko/cadjs/blob/master/cadjs.gif | height = 200px ]]
+![Alt Text](https://github.com/IvanDyachenko/cadjs/blob/master/cadjs.gif)
 
