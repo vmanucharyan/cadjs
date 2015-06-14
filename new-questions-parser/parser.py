@@ -30,7 +30,7 @@ if __name__ == '__main__':
     obj = {'categories': [
         {
             'name': 'Оптимизация',
-            'questons': parse_questions('optimization.src')
+            'questions': parse_questions('optimization.src')
         },
         {
             'name': 'Общие сведения о процессе проектирования',
@@ -38,11 +38,11 @@ if __name__ == '__main__':
         },
         {
             'name': 'Математические модели и методы',
-            'questons': parse_questions('models_and_methods.src')
+            'questions': parse_questions('models_and_methods.src')
         },
         {
             'name': 'Математические модели микро-уровня',
-            'questons': parse_questions('micro_level.src')
+            'questions': parse_questions('micro_level.src')
         },
     ]}
 
