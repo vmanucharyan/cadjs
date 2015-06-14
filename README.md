@@ -11,7 +11,7 @@ javascript:(function(){
     script.src = 'https://rawgit.com/IvanDyachenko/cadjs/master/cad.js';
     document.body.appendChild(script);})()
 ```
-* Если доступ к [rawgit.com](https://rawgit.com/) отсутсвуте (все внимание к `script.src`):
+* Если доступ к [rawgit.com](https://rawgit.com/) отсутсвует (все внимание к `script.src`):
 ```js
 javascript:(function(){
     var script = document.createElement('script');
