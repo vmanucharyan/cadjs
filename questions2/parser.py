@@ -16,7 +16,7 @@ def parse_questions(name):
     res = []
 
     for match in reg.findall(text):
-        question = match[0]
+        question = match[0].replace("\n", " ")
         ans = match[2]
 
         if (ans.endswith(".")):
