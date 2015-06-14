@@ -16,8 +16,12 @@ def parse_questions(name):
     res = []
 
     for match in reg.findall(text):
-        question = match[0]
+        question = match[0].replace("\n", " ")
         ans = match[2]
+
+        if (ans.endswith(".")):
+            ans = ans[0:len(ans)-1]
+
         res.append({'question': question, 'answer': ans})
 
     return res
@@ -30,7 +34,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'Общие сведения о процессе проектирования',
-            'questons': parse_questions('common.src')
+            'questions': parse_questions('common.src')
         },
         {
             'name': 'Математические модели и методы',
